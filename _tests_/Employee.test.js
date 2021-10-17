@@ -14,7 +14,7 @@ it('creates an employee object from name, id, email', () => {
 it('captures Employee ID input', () => {
     const employee = new Employee('Matt', 30, 'maweiche@gmail.com');
 
-    expect(employee.getID()).toEqual(expect.any(Number));
+    expect(employee.getId()).toEqual(expect.any(Number));
 });
 
 //get email
