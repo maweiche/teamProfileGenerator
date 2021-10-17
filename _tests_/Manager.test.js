@@ -7,13 +7,12 @@ describe("Manager", () =>{
 
         expect(manager.officeNumber).toEqual(expect.any(Number));
     })
-})
+
 
 //get role
-describe("Role", () =>{
     it('gets Role of employee', () => {
         const manager = new Manager('Matt', 30, 'maweiche@gmail.com', 2);
 
         expect(manager.getRole()).toEqual("Manager");
-    })
+});
 });
