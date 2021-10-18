@@ -10,6 +10,50 @@ const inquirer = require('inquirer');
 //team set
 const team = [];
 
+
+//manager prompts
+const addManager = () => {
+    return inquirer.prompt ([
+        {
+            type: 'input',
+            name: 'name',
+            message: "Who is the team manager?",
+            validate: nameInput=> {
+                if (nameInput) {
+                    return true;
+                }else{
+                    console.log("Enter the team manager's name.");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is the manager's ID number?",
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log("Please enter the manager's ID number.");
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the manager's email."
+        },
+        {
+            type: 'input',
+            name: 'officeNumber',
+            message: "Enter the manager's office number."
+        }
+    ])
+}
+
+
 //start of team prompt
 const addEmployee = () => {
     return inquirer.prompt ([
@@ -27,7 +71,7 @@ const addEmployee = () => {
                 if (nameInput) {
                     return true;
                 }else{
-                    console.log("Please enter a name.")
+                    console.log("Please enter a name.");
                     return false;
                 }
             }
@@ -38,7 +82,7 @@ const addEmployee = () => {
             message: "What is the employee's ID number?",
             validate: nameInput => {
                 if (isNaN(nameInput)) {
-                    console.log("Please enter the ID number.")
+                    console.log("Please enter the ID number.");
                     return false;
                 }else{
                     return true;
@@ -69,3 +113,5 @@ const addEmployee = () => {
     ])
 }
 
+addEmployee();
+console.log(team);
