@@ -1,56 +1,4 @@
-//Manager
-const generateManager = function(manager) {
-    return `
-    <h3>${manager.name}</h3>
-    `
-};
-//Engineer
-const generateEngineer = function(engineer) {
-    return `
-    <h3>${engineer.name}</h3>
-    `
-};
-//Intern
-const generateIntern = function (intern) {
-    return `
-    <h3>${intern.name}</h3>
-    `
-}
-// //push to page
-generateHTML = (data) => {
-    //array for cards
-    pageArray = [];
 
-    for(let i = 0; i <data.length; i++) {
-        const employee= data[i];
-        const role = employee.getRole();
-
-        //call manager
-        if( role === 'Manager') {
-            const managerCard = generateManager(employee);
-            pageArray.push(managerCard);
-        }
-        //call engineer
-        if(role === 'Engineer') {
-            const engineerCard = generateEngineer(employee);
-            pageArray.push(engineerCard);
-        }
-        //call intern
-        if(role === 'Intern') {
-            const internCard = generateIntern(employee);
-            pageArray.push(internCard);
-        }
-    }
-    //join all of the strings together
-    const employeeCards = pageArray.join('')
-    //return to page
-    const generateTeam = generatePage(employeeCards);
-    return generateTeam;
-}
-
-
-const generatePage = function (employeeCards) {
-    return `
     <!DOCTYPE html>
     <html lang="en">
 
@@ -83,8 +31,4 @@ const generatePage = function (employeeCards) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     </html>
-    `;
-}
-
-// //export
-module.exports = generateHTML;
+    

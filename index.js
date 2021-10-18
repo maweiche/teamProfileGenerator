@@ -1,5 +1,5 @@
 //link to HTML generator file
-const generaterHTML = require('./generateHTML');
+const generateHTML = require('./generateHTML');
 //team profiles
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer')
@@ -156,7 +156,7 @@ const writeFile = data => {
 addManager()
     .then(addEmployee)
     .then(team => {
-        return generaterHTML(team);
+        return generateHTML(team);
     })
     .then(pageHTML => {
         return writeFile(pageHTML);
