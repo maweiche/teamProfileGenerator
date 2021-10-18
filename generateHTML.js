@@ -1,4 +1,25 @@
-//generaterHTML page
+//Manager
+const generateManager = function(manager) {
+    return `
+    <h3>${manager.name}</h3>
+    `
+};
+//Engineer
+const generateEngineer = function(engineer) {
+    return `
+    <h3>${engineer.name}</h3>
+    `
+};
+//Intern
+const generateIntern = function (intern) {
+    return `
+    <h3>${intern.name}</h3>
+    `
+}
+// //push to page
+// generateHTML = (data)
+
+
 const generatePage = function () {
     return `
     <!DOCTYPE html>
