@@ -1,8 +1,17 @@
-# teamProfileGenerator
 # Team Profile Generator
 
-#######
+The goal of this application is to generate a team profile page based on user input gathered from utilizing the Inquirer module from Node.js. The building of this application utilized OOP and TDD using Jest.
 
+## Installation
+
+User must download Node and Inquirer, if testing then Jest is needed.
+
+## Tests
+`nmp test` to run Jest for constructor tests.
+
+## Usage
+
+Use inquirer from the command line to answer the questions about your project when prompted.
 
 ## Built With
 
@@ -18,7 +27,7 @@
 
 ## Live Site Snapshot
 
-![Portfolio gif](#)
+![Team Profile Generator gif](#)
 
 
 ## Authors

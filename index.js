@@ -4,10 +4,10 @@ const generateHTML = require('./generateHTML');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer')
 const Intern = require('./lib/Intern');
-//node 
+//nodes
 const fs = require('fs');
 const inquirer = require('inquirer');
-//team set
+//team set starts blank
 const team = [];
 
 
@@ -43,12 +43,20 @@ const addManager = () => {
         {
             type: 'input',
             name: 'email',
-            message: "Enter the manager's email."
+            message: "Enter the manager's email.",
+            validate: email => {
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+            if (valid){
+                return true
+            } else{
+                console.log("Enter a correct email address.")
+                return false;
+            }}
         },
         {
             type: 'input',
             name: 'officeNumber',
-            message: "Enter the manager's office number."
+            message: "Enter the manager's office number.",
             validate: nameInput=> {
                 if(isNaN(nameInput)){
                     console.log("Please enter an office number.")
@@ -107,17 +115,42 @@ const addEmployee = () => {
         {
             type: 'input',
             name: 'email',
-            message: "Enter the employee's email."
+            message: "Enter the employee's email.",
+            validate: email => {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+                if (valid){
+                    return true
+                } else{
+                    console.log("Enter a correct email address.")
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'github',
-            message: "Enter the employee's Github username."
+            message: "Enter the employee's Github username.",
+            when: (input) => input.role === "Engineer",
+            validate: nameInput => {
+                if(nameInput)  {
+                    return true;
+                } else {
+                    console.log ("Enter employee's github username.")
+                }
+            }
         },
         {
             type: 'input',
             name: 'school',
-            message: "Enter the intern's school."
+            message: "Enter the intern's school.",
+            when: (input) => input.role === "Intern",
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log ("Enter intern's school.")
+                }
+            }
         },
         {
             type: 'confirm',
@@ -127,8 +160,7 @@ const addEmployee = () => {
         }
     ])
     .then(employeeData => {
-        //data for employee's type
-
+    //data for employee's type
         let{name, id, email, role, github, school, confirmAddEmployee} = employeeData;
         let employee;
         if(role === "Engineer"){
@@ -160,7 +192,7 @@ const writeFile = data => {
 };
 
 
-
+//App runs in this order
 addManager()
     .then(addEmployee)
     .then(team => {
