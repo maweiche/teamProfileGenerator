@@ -1,0 +1,22 @@
+*{
+    box-shadow: 5px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-header{
+    background-color: bisque;
+    color: red;
+}
+
+.card-body {
+    background-color: chartreuse;
+    color: black;
+}
+
+.container {
+    /* display: flex; */
+    justify-content: space-evenly;
+    margin: 100px auto;
+    min-width: fit-content;
+}
