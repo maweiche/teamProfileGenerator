@@ -153,6 +153,14 @@ const writeFile = data => {
 
 
 
-addManager();
-addEmployee();
-console.log(team);
+addManager()
+    .then(addEmployee)
+    .then(team => {
+        return generaterHTML(team);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    .catch(err => {
+        console.log(err)
+    });
