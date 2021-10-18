@@ -118,7 +118,26 @@ const addEmployee = () => {
             default: false
         }
     ])
-}
+    .then(employeeData => {
+        //data for employee's type
+
+        let{name, id, email, role, github, school, confirmAddEmployee} = employeeData;
+        let employee;
+        if(role === "Engineer"){
+            employee = new Engineer (name, id, email, github);
+            console.log(employee);
+        }else if (role === "Intern"){
+            employee = new Intern (name, id, email, school);
+            console.log(employee);
+        }
+        team.push(employee);
+        if(confirmAddEmployee){
+            return addEmployee(team);
+        }else{
+            return team;
+        }
+    })
+};
 addManager();
 addEmployee();
 console.log(team);
