@@ -31,6 +31,40 @@ const addEmployee = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is the employee's ID number?",
+            validate: nameInput => {
+                if (isNaN(nameInput)) {
+                    console.log("Please enter the ID number.")
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: "Enter the employee's email."
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: "Enter the employee's Github username."
+        },
+        {
+            type: 'input',
+            name: 'school',
+            message: "Enter the intern's school."
+        },
+        {
+            type: 'confirm',
+            name: 'confirmAddEmployee',
+            message: "Add more team members?",
+            default: false
         }
     ])
 }
