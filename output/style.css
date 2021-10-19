@@ -1,16 +1,28 @@
 *{
-    box-shadow: 5px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+body {
+    background-color: lightgrey;
+}
+
+nav{
+    background-color: red;
+    color: white;
+}
+
+#navbar-text{
+    font-size: 45px;
+}
+
 
 .card-header{
-    background-color: bisque;
-    color: red;
+    background-color: red;
+    color: white;
 }
 
 .card-body {
-    background-color: chartreuse;
+    background-color: white;
     color: black;
 }
 
@@ -19,4 +31,12 @@
     justify-content: space-evenly;
     margin: 100px auto;
     min-width: fit-content;
+}
+
+.card{
+    box-shadow: 10px 10px 5px tomato;
+}
+
+h3{
+    font-weight:bold;
 }

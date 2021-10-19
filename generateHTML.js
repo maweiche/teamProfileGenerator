@@ -23,7 +23,7 @@ const generateEngineer = function(engineer) {
         <div class="card h-100">
             <div class="card-header">
             <h3>${engineer.name}</h3>
-            <h4>Manager</h4>
+            <h4>Engineer</h4>
             </div>
             <div class="card-body">
             <p class="id">ID: ${engineer.id}</p>
@@ -35,15 +35,12 @@ const generateEngineer = function(engineer) {
 };
 //Intern
 const generateIntern = function (intern) {
-    return `
-    <h3>${intern.name}</h3>
-    `
-    `
+    return`
     <div class="col-4 mt-4">
         <div class="card h-100">
             <div class="card-header">
             <h3>${intern.name}</h3>
-            <h4>Manager</h4>
+            <h4>Intern</h4>
             </div>
             <div class="card-body">
             <p class="id">ID: ${intern.id}</p>
@@ -86,7 +83,7 @@ generateHTML = (data) => {
     return generateTeam;
 }
 
-
+//create template for html
 const generatePage = function (employeeCards) {
     return `
     <!DOCTYPE html>
@@ -110,6 +107,9 @@ const generatePage = function (employeeCards) {
     <body>
 
         <header>
+            <nav class="navbar" id="navbar">
+                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
+            </nav>
         </header>
         
         <main>
