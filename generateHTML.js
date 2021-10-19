@@ -5,7 +5,7 @@ const generateManager = function(manager) {
         <div class="card h-100">
             <div class="card-header">
             <h3>${manager.name}</h3>
-            <h4>Manager</h4>
+            <span class="material-icons">work</span><h4>Manager</h4>
             </div>
             <div class="card-body">
             <p class="id">ID: ${manager.id}</p>
@@ -23,7 +23,7 @@ const generateEngineer = function(engineer) {
         <div class="card h-100">
             <div class="card-header">
             <h3>${engineer.name}</h3>
-            <h4>Engineer</h4>
+            <span class="material-icons">laptop</span><h4>Engineer</h4>
             </div>
             <div class="card-body">
             <p class="id">ID: ${engineer.id}</p>
@@ -40,7 +40,7 @@ const generateIntern = function (intern) {
         <div class="card h-100">
             <div class="card-header">
             <h3>${intern.name}</h3>
-            <h4>Intern</h4>
+            <span class="material-icons">free_breakfast</span><h4>Intern</h4>
             </div>
             <div class="card-body">
             <p class="id">ID: ${intern.id}</p>
@@ -101,6 +101,7 @@ const generatePage = function (employeeCards) {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="./style.css"/>
     </head>
 
@@ -108,7 +109,7 @@ const generatePage = function (employeeCards) {
 
         <header>
             <nav class="navbar" id="navbar">
-                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">Team Profile</span>
+                <span class="navbar-brand mb-0 h1 w-100 text-center" id="navbar-text">My Team</span>
             </nav>
         </header>
         

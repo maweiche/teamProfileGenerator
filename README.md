@@ -12,6 +12,8 @@ User must download Node and Inquirer, if testing then Jest is needed.
 ## Usage
 
 Use inquirer from the command line to answer the questions about your project when prompted.
+View walk through video here -[Screencastify]()<br>
+<img src="#">
 
 ## Built With
 
